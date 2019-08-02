@@ -1,0 +1,19 @@
+{
+  "name": "voyage-prework-tier2-mapbox-api",
+  "version": "1.0.0",
+  "description": "![Tier2 Mapbox API](./assets/Tier2_mapbox_api.gif)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HDenizD/voyage-prework-tier2-mapbox-api.git"
+  },
+  "author": "deniz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HDenizD/voyage-prework-tier2-mapbox-api/issues"
+  },
+  "homepage": "https://github.com/HDenizD/voyage-prework-tier2-mapbox-api#readme"
+}
