@@ -1,7 +1,9 @@
 // GLOBAL STUFF
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 body {
-  background-color: #161618;
-  height: 100vh;
-  width: 100vw;
+  // background-color: #161618;
+  #map {
+    height: 100vh;
+    width: 100vw;
+  }
 }
