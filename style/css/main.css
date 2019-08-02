@@ -7027,8 +7027,8 @@ body #wrapper #sidebar {
   position: absolute;
   top: 3%;
   left: 2%;
-  background: #161618;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
   text-align: center; }
   body #wrapper #sidebar .sidebar-content {
     margin-top: 20px; }
