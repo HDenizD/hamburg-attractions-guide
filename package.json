@@ -16,5 +16,7 @@
     "url": "https://github.com/HDenizD/voyage-prework-tier2-mapbox-api/issues"
   },
   "homepage": "https://github.com/HDenizD/voyage-prework-tier2-mapbox-api#readme",
-  "dependencies": {}
+  "dependencies": {
+    "eslint": "^6.1.0"
+  }
 }
