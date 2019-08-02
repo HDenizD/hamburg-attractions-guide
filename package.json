@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/HDenizD/voyage-prework-tier2-mapbox-api/issues"
   },
-  "homepage": "https://github.com/HDenizD/voyage-prework-tier2-mapbox-api#readme"
+  "homepage": "https://github.com/HDenizD/voyage-prework-tier2-mapbox-api#readme",
+  "dependencies": {}
 }
