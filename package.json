@@ -4,7 +4,7 @@
   "description": "![Tier2 Mapbox API](./assets/Tier2_mapbox_api.gif)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "scss": "node-sass --watch style/scss/main.scss -o style/css"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/HDenizD/voyage-prework-tier2-mapbox-api#readme",
   "dependencies": {
-    "eslint": "^6.1.0"
+    "eslint": "^6.1.0",
+    "node-sass": "^4.12.0"
   }
 }
