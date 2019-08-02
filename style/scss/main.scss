@@ -21,8 +21,9 @@ body {
 
       .sidebar-img {
         .logo-text {
-          position: relative;
-          
+          position: absolute;
+          top: 48px;
+          left: 15px;          
         }
         .logo {
           height: 120px;

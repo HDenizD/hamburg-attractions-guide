@@ -7033,7 +7033,9 @@ body #wrapper #sidebar {
   body #wrapper #sidebar .sidebar-content {
     margin-top: 20px; }
   body #wrapper #sidebar .sidebar-img .logo-text {
-    position: relative; }
+    position: absolute;
+    top: 48px;
+    left: 15px; }
   body #wrapper #sidebar .sidebar-img .logo {
     height: 120px;
     width: auto; }
