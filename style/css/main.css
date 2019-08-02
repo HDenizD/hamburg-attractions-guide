@@ -7022,5 +7022,5 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   background-color: #161618;
-  width: 1200px;
-  height: auto; }
+  height: 100vh;
+  width: 100vw; }
