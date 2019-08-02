@@ -7025,11 +7025,18 @@ body #wrapper #sidebar {
   width: 300px;
   z-index: 1;
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 2%;
   background: #161618;
   color: #ffffff;
   text-align: center; }
+  body #wrapper #sidebar .sidebar-content {
+    margin-top: 20px; }
+  body #wrapper #sidebar .sidebar-img .logo-text {
+    position: relative; }
+  body #wrapper #sidebar .sidebar-img .logo {
+    height: 120px;
+    width: auto; }
 
 body #wrapper #map {
   height: 100vh; }
