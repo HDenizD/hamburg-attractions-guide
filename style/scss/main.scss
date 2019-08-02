@@ -1,0 +1,39 @@
+// GLOBAL STUFF
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+  // background-color: #161618;
+  #wrapper {
+    #sidebar {
+      height: 750px;
+      width: 300px;
+      z-index: 1;
+      position: absolute;
+      top: 3%;
+      left: 2%;
+      background: #ffffff;
+      color: #000000;
+      text-align: center;
+
+      .sidebar-content {
+        margin-top: 20px;
+      }
+
+      .sidebar-img {
+        .logo-text {
+          position: absolute;
+          top: 48px;
+          left: 15px;
+        }
+        .logo {
+          height: 120px;
+          width: auto;
+        }
+      }
+    }
+
+    #map {
+      height: 100vh;
+    }
+  }
+}
