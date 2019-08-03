@@ -35,8 +35,11 @@
             cursor: pointer;
             &:hover {
               transition: all 0.5s ease-out;
-              background-color: #ff0000;
+              background-color: #ECE0C8;
             }
+          }
+          .active-info {
+            background-color: #78BCED;
           }
         }
       }
