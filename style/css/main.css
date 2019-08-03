@@ -7021,10 +7021,10 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 #wrapper #sidebar {
+  cursor: pointer;
   height: 772px;
   width: 300px;
   z-index: 1;
-  position: absolute;
   top: 3%;
   left: 2%;
   background: #ffffff;
@@ -7033,7 +7033,6 @@ a.text-dark:hover, a.text-dark:focus {
   #wrapper #sidebar .sidebar-content {
     margin-top: 20px; }
     #wrapper #sidebar .sidebar-content .sidebar-img .logo-text {
-      position: absolute;
       top: 48px;
       left: 15px; }
     #wrapper #sidebar .sidebar-content .logo {
@@ -7049,3 +7048,17 @@ a.text-dark:hover, a.text-dark:focus {
 
 #wrapper #map {
   height: 100vh; }
+
+#wrapper #info-box {
+  z-index: 1;
+  top: 200px;
+  left: 2110px; }
+  #wrapper #info-box .card {
+    height: 570px;
+    width: 400px !important; }
+
+#wrapper .active {
+  display: inline; }
+
+#wrapper .hidden {
+  display: hidden; }
