@@ -11,99 +11,168 @@ var geojson = {
   "features": [{
       "type": "Feature",
       "properties": {
-        "message": "Foo",
-        "iconSize": [60, 60]
+        "message": "Alster",
+        "iconSize": [30, 30]
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.9946585,
-          53.5542614
-
+          9.997649,
+          53.557344
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "message": "Bar",
-        "iconSize": [50, 50]
+        "message": "Elbphilharmonie",
+        "iconSize": [30, 30]
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.9946585,
-          53.5542614
+          9.984198,
+          53.541267
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "message": "Baz",
-        "iconSize": [40, 40]
+        "message": "Rathaus/ Townhall",
+        "iconSize": [30, 30]
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.9946585,
-          53.5542614
+          9.992061,
+          53.550252
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "message": "Bar",
-        "iconSize": [50, 50]
+        "message": "Planten un Bloomen",
+        "iconSize": [30, 30]
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.9946585,
-          53.5542614
+          9.982028,
+          53.560427
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "message": "Bar",
-        "iconSize": [50, 50]
+        "message": "Elbstrand / Elb Beach",
+        "iconSize": [30, 30]
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.9946585,
-          53.5542614
+          9.904346,
+          53.544347
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "message": "Bar",
-        "iconSize": [50, 50]
+        "message": "Jungfernstieg",
+        "iconSize": [30, 30]
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.9946585,
-          53.5542614
+          9.991770,
+          53.553800
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "message": "Bar",
-        "iconSize": [50, 50]
+        "message": "Reeperbahn",
+        "iconSize": [30, 30]
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.9946585,
-          53.5542614
+          9.962951,
+          53.549684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Hamburg Dungeon",
+        "iconSize": [30, 30]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.989483,
+          53.543785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Hamburger DOM",
+        "iconSize": [30, 30]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.968168,
+          53.553405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Landungsbrücken",
+        "iconSize": [30, 30]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.968205,
+          53.545781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Speicherstadt",
+        "iconSize": [30, 30]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.994603,
+          53.544438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "message": "Fischmarkt",
+        "iconSize": [30, 30]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.933653,
+          53.544833
         ]
       }
     },
