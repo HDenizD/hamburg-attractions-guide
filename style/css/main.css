@@ -7020,45 +7020,59 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-#wrapper #sidebar {
-  cursor: pointer;
-  height: 772px;
-  width: 300px;
-  z-index: 1;
-  top: 3%;
-  left: 2%;
-  background: #ffffff;
-  color: #000000;
-  text-align: center; }
-  #wrapper #sidebar .sidebar-content {
-    margin-top: 20px; }
-    #wrapper #sidebar .sidebar-content .sidebar-img .logo-text {
-      top: 48px;
-      left: 15px; }
-    #wrapper #sidebar .sidebar-content .logo {
-      height: 120px;
-      width: auto; }
-    #wrapper #sidebar .sidebar-content .sidebar-nav .list-group .list-group-item {
-      cursor: pointer; }
-      #wrapper #sidebar .sidebar-content .sidebar-nav .list-group .list-group-item:hover {
-        transition: all 0.5s ease-out;
-        background-color: #ECE0C8; }
-    #wrapper #sidebar .sidebar-content .sidebar-nav .list-group .active-info {
-      background-color: #78BCED; }
+.container-fluid {
+  padding: 0;
+  margin: 0; }
 
-#wrapper #map {
+#map {
+  width: 100vw;
   height: 100vh; }
+  #map #sidebar {
+    font-size: 18px;
+    cursor: pointer;
+    height: 772px;
+    width: 300px;
+    z-index: 1;
+    top: 3%;
+    left: 2%;
+    background: #ffffff;
+    color: #000000;
+    text-align: center; }
+    #map #sidebar .sidebar-content {
+      margin-top: 20px; }
+      #map #sidebar .sidebar-content .sidebar-img .logo-text {
+        top: 48px;
+        left: 15px; }
+      #map #sidebar .sidebar-content .logo {
+        height: 120px;
+        width: auto; }
+      #map #sidebar .sidebar-content .sidebar-nav .list-group .list-group-item {
+        cursor: pointer; }
+        #map #sidebar .sidebar-content .sidebar-nav .list-group .list-group-item:hover {
+          transition: all 0.5s ease-out;
+          background-color: #ECE0C8; }
+      #map #sidebar .sidebar-content .sidebar-nav .list-group .active-info {
+        background-color: #78BCED; }
+  #map #info-box {
+    z-index: 1;
+    top: 20%;
+    left: 82%; }
+    #map #info-box .card {
+      height: 480px;
+      width: 400px !important; }
+      #map #info-box .card .card-text {
+        font-size: 14px; }
 
-#wrapper #info-box {
-  z-index: 1;
-  top: 200px;
-  left: 2110px; }
-  #wrapper #info-box .card {
-    height: 570px;
-    width: 400px !important; }
-
-#wrapper .active {
+.info-active {
   display: inline; }
 
-#wrapper .hidden {
+.info-hidden {
   display: hidden; }
+
+@media (max-width: 1920px) {
+  #info-box {
+    left: 77% !important; } }
+
+@media (max-width: 1680px) {
+  #info-box {
+    left: 73% !important; } }
