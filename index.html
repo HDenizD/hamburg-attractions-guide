@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Hamburg Attractions Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/hamburg-logo-favicon.jpg">
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="stylesheet" href="style/css/main.css">
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<body>
+  <!-- START -->
+  <div id="wrapper" class="container-fluid">
+    <nav id="sidebar" class="rounded border border-dark position-absolute">
+
+      <div class="sidebar-content">
+        <div class="sidebar-img">
+          <h1 class="logo-text position-absolute">Hamburg</h1>
+          <img class="logo" src="assets/Hamburg-logo.svg" alt="Hamburg Logo">
+        </div>
+
+        <div class="sidebar-header">
+          <h3><u>Attractions Guide</u></h3>
+        </div>
+
+        <div class="sidebar-nav">
+          <ul class="list-group">
+            <li class="list-group-item">Elbstrand</li>
+            <li class="list-group-item">Rathaus / Town Hall</li>
+            <li class="list-group-item">Planten un Blomen</li>
+            <li class="list-group-item">Jungfernstieg</li>
+            <li class="list-group-item">Alster</li>
+            <li class="list-group-item">Reeperbahn / red-light district</li>
+            <li class="list-group-item">Elbphilharmonie</li>
+            <li class="list-group-item">Hamburg Dungeon</li>
+            <li class="list-group-item">Hamburger DOM</li>
+            <li class="list-group-item">Landungsbrücken</li>
+            <li class="list-group-item">Speicherstadt</li>
+            <li class="list-group-item">Fischmarkt / Fish Market</li>
+          </ul>
+        </div>
+
+
+      </div>
+    </nav>
+
+    <div id="info-box" class="position-absolute">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top info-img" src="http://via.placeholder.com/640x360" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text info-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+
+  </div>
+
+
+  <!-- END -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
+  <script src="js/mapbox.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
