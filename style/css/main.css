@@ -7027,12 +7027,11 @@ a.text-dark:hover, a.text-dark:focus {
 #map {
   width: 100vw;
   height: 100vh; }
-  #map .marker {
-    display: block;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 0; }
+  #map .alster {
+    background-image: url("../../assets/hamburg-logo-favicon.jpg");
+    height: 50px;
+    width: 50px;
+    background-color: red; }
   #map #sidebar {
     font-size: 18px;
     cursor: pointer;

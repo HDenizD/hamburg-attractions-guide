@@ -2,16 +2,16 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZGVuaXp6ZWQiLCJhIjoiY2p5dTQyb2UyMGExNDNocDgxZ
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/denizzed/cjyu2kr5e0rqq1cry6wmo3rhg',
-  center: [10.0009, 53.5476],
+  center: [9.9432218, 53.5470901],
   zoom: 11.41,
 });
 
-var geojson = {
+var geoJson = {
   "type": "FeatureCollection",
   "features": [{
       "type": "Feature",
       "properties": {
-        "message": "Alster",
+        "message": "alster",
         "iconSize": [30, 30]
       },
       "geometry": {
@@ -25,7 +25,7 @@ var geojson = {
     {
       "type": "Feature",
       "properties": {
-        "message": "Elbphilharmonie",
+        "message": "elbphilharmonie",
         "iconSize": [30, 30]
       },
       "geometry": {
@@ -39,7 +39,7 @@ var geojson = {
     {
       "type": "Feature",
       "properties": {
-        "message": "Rathaus/ Townhall",
+        "message": "rathaus",
         "iconSize": [30, 30]
       },
       "geometry": {
@@ -53,7 +53,7 @@ var geojson = {
     {
       "type": "Feature",
       "properties": {
-        "message": "Planten un Bloomen",
+        "message": "planten-un-bloomen",
         "iconSize": [30, 30]
       },
       "geometry": {
@@ -67,7 +67,7 @@ var geojson = {
     {
       "type": "Feature",
       "properties": {
-        "message": "Elbstrand / Elb Beach",
+        "message": "elbstrand",
         "iconSize": [30, 30]
       },
       "geometry": {
@@ -81,7 +81,7 @@ var geojson = {
     {
       "type": "Feature",
       "properties": {
-        "message": "Jungfernstieg",
+        "message": "jungfernstieg",
         "iconSize": [30, 30]
       },
       "geometry": {
@@ -95,7 +95,7 @@ var geojson = {
     {
       "type": "Feature",
       "properties": {
-        "message": "Reeperbahn",
+        "message": "reeperbahn",
         "iconSize": [30, 30]
       },
       "geometry": {
@@ -109,7 +109,7 @@ var geojson = {
     {
       "type": "Feature",
       "properties": {
-        "message": "Hamburg Dungeon",
+        "message": "hamburg-dungeon",
         "iconSize": [30, 30]
       },
       "geometry": {
@@ -123,7 +123,7 @@ var geojson = {
     {
       "type": "Feature",
       "properties": {
-        "message": "Hamburger DOM",
+        "message": "hamburger-dom",
         "iconSize": [30, 30]
       },
       "geometry": {
@@ -137,7 +137,7 @@ var geojson = {
     {
       "type": "Feature",
       "properties": {
-        "message": "Landungsbrücken",
+        "message": "landungsbrücken",
         "iconSize": [30, 30]
       },
       "geometry": {
@@ -151,7 +151,7 @@ var geojson = {
     {
       "type": "Feature",
       "properties": {
-        "message": "Speicherstadt",
+        "message": "speicherstadt",
         "iconSize": [30, 30]
       },
       "geometry": {
@@ -165,7 +165,7 @@ var geojson = {
     {
       "type": "Feature",
       "properties": {
-        "message": "Fischmarkt",
+        "message": "fischmarkt",
         "iconSize": [30, 30]
       },
       "geometry": {
@@ -179,11 +179,14 @@ var geojson = {
   ]
 };
 
-geojson.features.forEach(function(marker) {
+
+geoJson.features.forEach(function(marker) {
+  let locationName = marker.properties.message;
   // create a DOM element for the marker
   var el = document.createElement('div');
   el.className = 'marker';
-  el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+  el.className = locationName;
+  // el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
   el.style.width = marker.properties.iconSize[0] + 'px';
   el.style.height = marker.properties.iconSize[1] + 'px';
 

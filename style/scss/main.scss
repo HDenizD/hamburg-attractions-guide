@@ -9,13 +9,12 @@
 #map {
   width: 100vw;
   height: 100vh;
-
-  .marker {
-    display: block;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 0;
+  // LOCATION ICONS
+  .alster {
+    background-image: url("../../assets/hamburg-logo-favicon.jpg");
+    height: 50px;
+    width: 50px;
+    background-color: red;
   }
 
   #sidebar {
