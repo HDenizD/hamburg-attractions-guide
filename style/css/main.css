@@ -7028,10 +7028,10 @@ a.text-dark:hover, a.text-dark:focus {
   width: 100vw;
   height: 100vh; }
   #map .alster {
-    background-image: url("../../assets/hamburg-logo-favicon.jpg");
+    z-index: 1;
+    background-image: url("../../assets/locationImages/alster.jpg");
     height: 50px;
-    width: 50px;
-    background-color: red; }
+    width: 50px; }
   #map #sidebar {
     font-size: 18px;
     cursor: pointer;

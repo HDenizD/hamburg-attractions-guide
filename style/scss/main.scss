@@ -1,5 +1,5 @@
 // GLOBAL STUFF
-@import "node_modules/bootstrap/scss/bootstrap.scss"; // background-color: #161618;
+@import "node_modules/bootstrap/scss/bootstrap.scss";
 
 .container-fluid {
   padding: 0;
@@ -11,10 +11,11 @@
   height: 100vh;
   // LOCATION ICONS
   .alster {
-    background-image: url("../../assets/hamburg-logo-favicon.jpg");
+    z-index: 1;
+    background-image: url("../../assets/locationImages/alster.jpg");
     height: 50px;
     width: 50px;
-    background-color: red;
+    // background-color: red;
   }
 
   #sidebar {
