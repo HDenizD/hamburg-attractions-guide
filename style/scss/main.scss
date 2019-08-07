@@ -9,14 +9,6 @@
 #map {
   width: 100vw;
   height: 100vh;
-  // LOCATION ICONS
-  .alster {
-    z-index: 1;
-    background-image: url("../../assets/locationImages/alster.jpg");
-    height: 50px;
-    width: 50px;
-    // background-color: red;
-  }
 
   #sidebar {
     font-size: 18px;
@@ -82,11 +74,11 @@
 // STATE CLASSES
 
 .info-active {
-  display: inline;
+  display: inline !important;
 }
 
 .info-hidden {
-  display: hidden;
+  display: none !important;
 }
 @media (max-width: 1920px) {
   #info-box {

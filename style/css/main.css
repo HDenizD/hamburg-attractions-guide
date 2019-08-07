@@ -7027,11 +7027,6 @@ a.text-dark:hover, a.text-dark:focus {
 #map {
   width: 100vw;
   height: 100vh; }
-  #map .alster {
-    z-index: 1;
-    background-image: url("../../assets/locationImages/alster.jpg");
-    height: 50px;
-    width: 50px; }
   #map #sidebar {
     font-size: 18px;
     cursor: pointer;
@@ -7069,10 +7064,10 @@ a.text-dark:hover, a.text-dark:focus {
         font-size: 14px; }
 
 .info-active {
-  display: inline; }
+  display: inline !important; }
 
 .info-hidden {
-  display: hidden; }
+  display: none !important; }
 
 @media (max-width: 1920px) {
   #info-box {

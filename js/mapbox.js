@@ -174,13 +174,14 @@ geoJson.features.forEach(function(marker) {
   var el = document.createElement('div');
   el.className = 'marker';
   el.className = locationName;
+  el.style.backgroundImage = 'url("../../assets/map-marker.png")';
+  el.style.width = '30px';
+  el.style.height = '30px';
+  el.style.top = '-13px';
+
   // el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
   // el.style.width = marker.properties.iconSize[0] + 'px';
   // el.style.height = marker.properties.iconSize[1] + 'px';
-
-  // el.style.backgroundImage = 'url("../../assets/locationImages/tile.png")';
-  // el.style.width = 50 + 'px';
-  // el.style.height = 50 + 'px';
   // console.log(el);
 
   el.addEventListener('click', function() {
