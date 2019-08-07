@@ -6,7 +6,59 @@ const map = new mapboxgl.Map({
   zoom: 11.41,
 });
 
-var geoJson = {
+// LOCATIONS: LNG / LAT
+const lngLatLocation = {
+  alster: [
+    9.997649,
+    53.557344
+  ],
+  elbphilharmonie: [
+    9.984198,
+    53.541267
+  ],
+  rathaus: [
+    9.992061,
+    53.550252
+  ],
+  plantenUnBloomen: [
+    9.982028,
+    53.560427
+  ],
+  elbstrand: [
+    9.904346,
+    53.544347
+  ],
+  jungfernstieg: [
+    9.991770,
+    53.553800
+  ],
+  reeperbahn: [
+    9.962951,
+    53.549684
+  ],
+  hamburgDungeon: [
+    9.984198,
+    53.541267
+  ],
+  hamburgDom: [
+    9.984198,
+    53.541267
+  ],
+  landungsbruecken: [
+    9.968205,
+    53.545781
+  ],
+  speicherstadt: [
+    9.994603,
+    53.544438
+  ],
+  fischmarkt: [
+    9.933653,
+    53.544833
+  ],
+}
+
+const geoJson = {
   "type": "FeatureCollection",
   "features": [{
       "type": "Feature",
@@ -16,8 +68,8 @@ var geoJson = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.997649,
-          53.557344
+          lngLatLocation.alster[0],
+          lngLatLocation.alster[1]
         ]
       }
     },
@@ -29,8 +81,8 @@ var geoJson = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.984198,
-          53.541267
+          lngLatLocation.elbphilharmonie[0],
+          lngLatLocation.elbphilharmonie[1]
         ]
       }
     },
@@ -42,8 +94,8 @@ var geoJson = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.992061,
-          53.550252
+          lngLatLocation.rathaus[0],
+          lngLatLocation.rathaus[1]
         ]
       }
     },
@@ -55,8 +107,8 @@ var geoJson = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.982028,
-          53.560427
+          lngLatLocation.plantenUnBloomen[0],
+          lngLatLocation.plantenUnBloomen[1]
         ]
       }
     },
@@ -68,8 +120,8 @@ var geoJson = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.904346,
-          53.544347
+          lngLatLocation.elbstrand[0],
+          lngLatLocation.elbstrand[1]
         ]
       }
     },
@@ -81,8 +133,8 @@ var geoJson = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.991770,
-          53.553800
+          lngLatLocation.jungfernstieg[0],
+          lngLatLocation.jungfernstieg[1]
         ]
       }
     },
@@ -94,8 +146,8 @@ var geoJson = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.962951,
-          53.549684
+          lngLatLocation.reeperbahn[0],
+          lngLatLocation.reeperbahn[1]
         ]
       }
     },
@@ -107,8 +159,8 @@ var geoJson = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.989483,
-          53.543785
+          lngLatLocation.hamburgDungeon[0],
+          lngLatLocation.hamburgDungeon[1]
         ]
       }
     },
@@ -120,8 +172,8 @@ var geoJson = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.968168,
-          53.553405
+          lngLatLocation.hamburgDom[0],
+          lngLatLocation.hamburgDom[1]
         ]
       }
     },
@@ -133,8 +185,8 @@ var geoJson = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.968205,
-          53.545781
+          lngLatLocation.landungsbruecken[0],
+          lngLatLocation.landungsbruecken[1]
         ]
       }
     },
@@ -146,8 +198,8 @@ var geoJson = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.994603,
-          53.544438
+          lngLatLocation.speicherstadt[0],
+          lngLatLocation.speicherstadt[1]
         ]
       }
     },
@@ -159,8 +211,8 @@ var geoJson = {
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.933653,
-          53.544833
+          lngLatLocation.fischmarkt[0],
+          lngLatLocation.fischmarkt[1]
         ]
       }
     },
@@ -189,6 +241,11 @@ geoJson.features.forEach(function(marker) {
     .addTo(map);
 });
 
+// INFO-BOX FUNCTION
+function infoBox(img, text) {
+
+}
+
 // FLY TO LOCATION FUNCTION
 function flyToLocation(selector, lng, lat) {
   document.querySelector(selector).addEventListener('click', () => {
@@ -202,5 +259,5 @@ function flyToLocation(selector, lng, lat) {
   });
 }
 
-console.log(geoJson);
-flyToLocation('.btn-alster', geoJson.features[0].geometry.coordinates[0], geoJson.features[0].geometry.coordinates[1]);
+// FLY TO EVENTS
+flyToLocation('.btn-alster', lngLatLocation.alster[0], lngLatLocation.alster[1]);
