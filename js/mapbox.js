@@ -179,11 +179,6 @@ geoJson.features.forEach(function(marker) {
   el.style.height = '30px';
   el.style.top = '-13px';
 
-  // el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
-  // el.style.width = marker.properties.iconSize[0] + 'px';
-  // el.style.height = marker.properties.iconSize[1] + 'px';
-  // console.log(el);
-
   el.addEventListener('click', function() {
     window.alert(marker.properties.message);
   });
