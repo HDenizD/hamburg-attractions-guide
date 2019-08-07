@@ -188,10 +188,3 @@ geoJson.features.forEach(function(marker) {
     .setLngLat(marker.geometry.coordinates)
     .addTo(map);
 });
-
-
-// type: 'Feature',
-//   geometry: {
-//     type: 'Point',
-//     coordinates: [53.557377, 9.997655]
-//   }
