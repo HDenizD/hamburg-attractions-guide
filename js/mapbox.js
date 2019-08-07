@@ -261,3 +261,4 @@ function flyToLocation(selector, lng, lat) {
 
 // FLY TO EVENTS
 flyToLocation('.btn-alster', lngLatLocation.alster[0], lngLatLocation.alster[1]);
+flyToLocation('.btn-elbphilharmonie', lngLatLocation.elbphilharmonie[0], lngLatLocation.elbphilharmonie[1]);
