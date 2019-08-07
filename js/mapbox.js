@@ -1,5 +1,5 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGVuaXp6ZWQiLCJhIjoiY2p5dTQyb2UyMGExNDNocDgxZ3R0YzE0YSJ9.coHuDe_l_8rWRoTBW9u8SQ';
-var map = new mapboxgl.Map({
+const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/denizzed/cjyu2kr5e0rqq1cry6wmo3rhg',
   center: [9.9432218, 53.5470901],
@@ -167,11 +167,10 @@ var geoJson = {
   ]
 };
 
-
+// CREATE AND SET MAP MARKERS
 geoJson.features.forEach(function(marker) {
   let locationName = marker.properties.message;
-  // create a DOM element for the marker
-  var el = document.createElement('div');
+  let el = document.createElement('div');
   el.className = 'marker';
   el.className = locationName;
   el.style.backgroundImage = 'url("../../assets/map-marker.png")';
@@ -179,12 +178,29 @@ geoJson.features.forEach(function(marker) {
   el.style.height = '30px';
   el.style.top = '-13px';
 
+  // EVENT FOR INFO-BOX
   el.addEventListener('click', function() {
     window.alert(marker.properties.message);
   });
 
-  // add marker to map
+  // ADD MARKERS TO MAP
   new mapboxgl.Marker(el)
     .setLngLat(marker.geometry.coordinates)
     .addTo(map);
 });
+
+// FLY TO LOCATION FUNCTION
+function flyToLocation(selector, lng, lat) {
+  document.querySelector(selector).addEventListener('click', () => {
+    map.flyTo({
+      center: [
+        lng,
+        lat
+      ],
+      zoom: 15,
+    })
+  });
+}
+
+console.log(geoJson);
+flyToLocation('.btn-alster', geoJson.features[0].geometry.coordinates[0], geoJson.features[0].geometry.coordinates[1]);
