@@ -230,21 +230,16 @@ geoJson.features.forEach(function(marker) {
   el.style.height = '30px';
   el.style.top = '-13px';
 
-  // EVENT FOR INFO-BOX
-  el.addEventListener('click', function() {
-    window.alert(marker.properties.message);
-  });
+  // // EVENT FOR INFO-BOX
+  // el.addEventListener('click', function() {
+  //   window.alert(marker.properties.message);
+  // });
 
   // ADD MARKERS TO MAP
   new mapboxgl.Marker(el)
     .setLngLat(marker.geometry.coordinates)
     .addTo(map);
 });
-
-// INFO-BOX FUNCTION
-function infoBox(img, text) {
-
-}
 
 // REMOVES ACTIVE CLASSES FROM SIDEBAR
 function removeActives() {
