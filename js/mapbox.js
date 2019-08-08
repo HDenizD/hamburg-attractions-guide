@@ -37,12 +37,12 @@ const lngLatLocation = {
     53.549684
   ],
   hamburgDungeon: [
-    9.984198,
-    53.541267
+    9.989484,
+    53.543938
   ],
   hamburgDom: [
-    9.984198,
-    53.541267
+    9.968232,
+    53.554157
   ],
   landungsbruecken: [
     9.968205,
@@ -262,3 +262,21 @@ function flyToLocation(selector, lng, lat) {
 // FLY TO EVENTS
 flyToLocation('.btn-alster', lngLatLocation.alster[0], lngLatLocation.alster[1]);
 flyToLocation('.btn-elbphilharmonie', lngLatLocation.elbphilharmonie[0], lngLatLocation.elbphilharmonie[1]);
+flyToLocation('.btn-rathaus', lngLatLocation.rathaus[0], lngLatLocation.rathaus[1]);
+flyToLocation('.btn-planten', lngLatLocation.plantenUnBloomen[0], lngLatLocation.plantenUnBloomen[1]);
+flyToLocation('.btn-elbstrand', lngLatLocation.elbstrand[0], lngLatLocation.elbstrand[1]);
+flyToLocation('.btn-jungfernstieg', lngLatLocation.jungfernstieg[0], lngLatLocation.jungfernstieg[1]);
+flyToLocation('.btn-reeperbahn', lngLatLocation.reeperbahn[0], lngLatLocation.reeperbahn[1]);
+flyToLocation('.btn-hamburg-dungeon', lngLatLocation.hamburgDungeon[0], lngLatLocation.hamburgDungeon[1]);
+flyToLocation('.btn-hamburg-dom', lngLatLocation.hamburgDom[0], lngLatLocation.hamburgDom[1]);
+flyToLocation('.btn-landungsbruecken', lngLatLocation.landungsbruecken[0], lngLatLocation.landungsbruecken[1]);
+flyToLocation('.btn-speicherstadt', lngLatLocation.speicherstadt[0], lngLatLocation.speicherstadt[1]);
+flyToLocation('.btn-fischmarkt', lngLatLocation.fischmarkt[0], lngLatLocation.fischmarkt[1]);
+
+
+
+
+
+
+
+//
