@@ -246,12 +246,20 @@ function infoBox(img, text) {
 
 }
 
+// REMOVES ACTIVE CLASSES FROM SIDEBAR
+function removeActives() {
+  for (var i = 0; i < document.querySelectorAll('.active').length; i++) {
+    document.querySelector('.active').classList.remove('active');
+  }
+}
+
 // FLY TO LOCATION FUNCTION
 function flyToLocation(selector, lng, lat) {
   let el = document.querySelector(selector);
   el.addEventListener('click', () => {
     // ADD .active TO CLICKED SELECTOR
-
+    removeActives();
+    el.classList.add('active');
 
     map.flyTo({
       center: [
@@ -276,9 +284,6 @@ flyToLocation('.btn-hamburg-dom', lngLatLocation.hamburgDom[0], lngLatLocation.h
 flyToLocation('.btn-landungsbruecken', lngLatLocation.landungsbruecken[0], lngLatLocation.landungsbruecken[1]);
 flyToLocation('.btn-speicherstadt', lngLatLocation.speicherstadt[0], lngLatLocation.speicherstadt[1]);
 flyToLocation('.btn-fischmarkt', lngLatLocation.fischmarkt[0], lngLatLocation.fischmarkt[1]);
-
-
-
 
 
 
