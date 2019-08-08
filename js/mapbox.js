@@ -248,7 +248,11 @@ function infoBox(img, text) {
 
 // FLY TO LOCATION FUNCTION
 function flyToLocation(selector, lng, lat) {
-  document.querySelector(selector).addEventListener('click', () => {
+  let el = document.querySelector(selector);
+  el.addEventListener('click', () => {
+    // ADD .active TO CLICKED SELECTOR
+
+
     map.flyTo({
       center: [
         lng,
