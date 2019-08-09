@@ -25,7 +25,7 @@ function removeActives() {
 }
 
 // AXIOS LOAD LOCATIONS FROM JSON FUNCTION
-function getLocations() {
+function loadLocations() {
   axios.get('js/lngLatLocation.json')
     .then((response) => {
       const lngLatLocation = response.data;
@@ -278,7 +278,7 @@ const map = new mapboxgl.Map({
 });
 
 // INIT FUNCTION
-getLocations();
+loadLocations();
 
 
 
