@@ -7037,6 +7037,7 @@ a.text-dark:hover, a.text-dark:focus {
     border: solid black 1px;
     background-color: #ffffff; }
   #map #sidebar {
+    transition: all 0.5s ease-out;
     transform: translate(0%, -50%);
     top: 50%;
     left: 0;
