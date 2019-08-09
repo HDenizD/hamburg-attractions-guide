@@ -316,6 +316,13 @@ flyToLocation('.btn-fischmarkt',
   lngLatLocation.fischmarkt[1]);
 
 
+const sideBar = document.querySelector('#sidebar');
+sideBar.addEventListener('click', () => {
+  // ADD TRANSITION
+  sideBar.style.left = '-300px';
+});
+
+
 
 
 
