@@ -68,14 +68,30 @@
       }
     }
   }
-}
-@media (max-width: 1920px) {
+
   #info-box {
-    left: 77% !important;
+    z-index: 1;
+    transform: translate(-100%, -50%);
+    top: 50%;
+    left: 100%;
+
+    .card {
+      height: 480px;
+      width: 400px !important;
+
+      .card-text {
+        font-size: 14px;
+      }
+    }
   }
 }
-@media (max-width: 1680px) {
-  #info-box {
-    left: 73%!important;
-  }
-}
+// @media (max-width: 1920px) {
+//   #info-box {
+//     left: 77% !important;
+//   }
+// }
+// @media (max-width: 1680px) {
+//   #info-box {
+//     left: 73%!important;
+//   }
+// }
