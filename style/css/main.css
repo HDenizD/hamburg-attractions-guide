@@ -7037,13 +7037,14 @@ a.text-dark:hover, a.text-dark:focus {
     border: solid black 1px;
     background-color: #ffffff; }
   #map #sidebar {
+    transform: translate(0%, -50%);
+    top: 50%;
+    left: 0;
     font-size: 18px;
     cursor: pointer;
     height: 725px;
     width: 300px;
     z-index: 1;
-    top: 100px;
-    left: 0;
     background: #ffffff;
     color: #000000;
     text-align: center; }
