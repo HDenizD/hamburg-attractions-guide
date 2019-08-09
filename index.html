@@ -15,8 +15,8 @@
   <!-- START -->
 
   <div id="map" class="container-fluid">
-
-    <nav id="sidebar" class="rounded border border-dark position-absolute">
+    <nav id="sidebar" class="border border-dark position-absolute">
+      <button type="button" class="sidebar-toggle"><</button>
 
       <div class="sidebar-content">
         <div class="sidebar-img">
@@ -39,7 +39,7 @@
             <li class="list-group-item btn-reeperbahn">Reeperbahn / Red-light district</li>
             <li class="list-group-item btn-hamburg-dungeon">Hamburg Dungeon</li>
             <li class="list-group-item btn-hamburg-dom">Hamburger DOM</li>
-            <li class="list-group-item btn-landungsbreucken">Landungsbrücken</li>
+            <li class="list-group-item btn-landungsbruecken">Landungsbrücken</li>
             <li class="list-group-item btn-speicherstadt">Speicherstadt</li>
             <li class="list-group-item btn-fischmarkt">Fischmarkt / Fish Market</li>
           </ul>
@@ -47,23 +47,13 @@
       </div>
     </nav>
 
-    <div id="info-box" class="position-absolute rounded border border-dark info-hidden">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top info-img" src="http://via.placeholder.com/640x360" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text info-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-            rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-          </div>
-        </div>
-      </div>
-
   </div>
 
 
 
   <!-- END -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/axios/dist/axios.min.js" charset="utf-8"></script>
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
   <script src="js/mapbox.js"></script>
   <script src="js/main.js"></script>
