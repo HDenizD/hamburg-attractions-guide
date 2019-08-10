@@ -24,6 +24,14 @@ function removeActives() {
   }
 }
 
+// LOAD INFOBOX CONTENT FOR WHAT LOCATION IS SELECTED
+function loadInfoBox(selector, img, text) {
+  const activeEl = document.querySelectorAll(selector).classList.contains('active');
+  console.log(activeEl);
+}
+
+
+
 // AXIOS LOAD LOCATIONS FROM JSON FUNCTION
 function loadLocations() {
   axios.get('js/lngLatLocation.json')
@@ -261,6 +269,8 @@ function loadLocations() {
       flyToLocation('.btn-fischmarkt',
         lngLatLocation.fischmarkt[0],
         lngLatLocation.fischmarkt[1]);
+
+
 
     })
     .catch((error) => {
