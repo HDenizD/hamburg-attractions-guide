@@ -24,15 +24,6 @@ function removeActives() {
   }
 }
 
-// TODO: Make this work
-// LOAD INFOBOX CONTENT FOR WHAT LOCATION IS SELECTED
-function loadInfoBox(selector, img, text) {
-  const activeEl = document.querySelectorAll(selector).classList.contains('active');
-  console.log(activeEl);
-}
-
-
-
 // AXIOS LOAD LOCATIONS FROM JSON FUNCTION
 function loadLocations() {
   axios.get('js/lngLatLocation.json')

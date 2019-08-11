@@ -1,6 +1,6 @@
 // GLOBAL STUFF
-@import "node_modules/bootstrap/scss/bootstrap.scss";
-// TODO: Scale sidebar and infobox on diff. resolutions and make a sexy looking for mobile
+@import "node_modules/bootstrap/scss/bootstrap.scss"; // TODO: Scale sidebar and infobox on diff. resolutions and make a sexy looking for mobile
+
 .container-fluid {
   padding: 0;
   margin: 0;
@@ -59,28 +59,18 @@
               transition: all 0.5s ease-out;
               background-color: #78BCED;
             }
+
+            .info {
+              z-index: 5;
+              left: 273px;
+              position: absolute;
+            }
           }
 
           .active {
             background-color: #78BCED;
           }
         }
-      }
-    }
-  }
-
-  #info-box {
-    z-index: 1;
-    transform: translate(-100%, -50%);
-    top: 50%;
-    left: 100%;
-
-    .card {
-      height: 480px;
-      width: 400px !important;
-
-      .card-text {
-        font-size: 14px;
       }
     }
   }

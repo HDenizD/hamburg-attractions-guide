@@ -7062,15 +7062,9 @@ a.text-dark:hover, a.text-dark:focus {
         #map #sidebar .sidebar-content .sidebar-nav .list-group .list-group-item:hover {
           transition: all 0.5s ease-out;
           background-color: #78BCED; }
+        #map #sidebar .sidebar-content .sidebar-nav .list-group .list-group-item .info {
+          z-index: 5;
+          left: 273px;
+          position: absolute; }
       #map #sidebar .sidebar-content .sidebar-nav .list-group .active {
         background-color: #78BCED; }
-  #map #info-box {
-    z-index: 1;
-    transform: translate(-100%, -50%);
-    top: 50%;
-    left: 100%; }
-    #map #info-box .card {
-      height: 480px;
-      width: 400px !important; }
-      #map #info-box .card .card-text {
-        font-size: 14px; }
