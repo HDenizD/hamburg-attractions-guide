@@ -10,14 +10,19 @@
   height: 100vh;
 
   .sidebar-toggle {
-    width: 25px;
-    height: 725px;
+    border-radius: 0px 10px 10px 0px;
+    transform: translate(0%, -50%);
+    width: 40px;
+    height: 150px;
     position: absolute;
     z-index: 2;
-    top: -1px;
+    top: 50%;
     left: 299px;
     border: solid black 1px;
     background-color: #ffffff;
+  }
+  .sidebar-toggle:focus {
+    outline: none;
   }
 
   #sidebar {
