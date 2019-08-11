@@ -1,5 +1,6 @@
 // GLOBAL STUFF
 @import "node_modules/bootstrap/scss/bootstrap.scss";
+// TODO: Scale sidebar and infobox on diff. resolutions and make a sexy looking for mobile
 
 .container-fluid {
   padding: 0;
@@ -59,6 +60,11 @@
               transition: all 0.5s ease-out;
               background-color: #78BCED;
             }
+
+            .info {
+              left: 273px;
+              position: absolute;
+            }
           }
 
           .active {
@@ -69,13 +75,13 @@
     }
   }
 }
-@media (max-width: 1920px) {
-  #info-box {
-    left: 77% !important;
-  }
-}
-@media (max-width: 1680px) {
-  #info-box {
-    left: 73%!important;
-  }
-}
+// @media (max-width: 1920px) {
+//   #info-box {
+//     left: 77% !important;
+//   }
+// }
+// @media (max-width: 1680px) {
+//   #info-box {
+//     left: 73%!important;
+//   }
+// }
