@@ -4,8 +4,8 @@
   "description": "![Tier2 Mapbox API](./assets/Tier2_mapbox_api.gif)",
   "main": "index.js",
   "scripts": {
-    "scss": "node-sass --watch style/scss/main.scss -o style/css",
-    "start": "node index.js"
+    "scss": "node-sass --watch public/style/scss/main.scss -o public/style/css/",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "eslint": "^6.1.0",
+    "express": "^4.17.1",
     "jquery": "^3.4.1",
     "mapbox-gl": "^1.2.0",
     "node-sass": "^4.12.0",

@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <title>Hamburg Attractions Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon"
-    href="assets/hamburg-logo-favicon.jpg">
-  <link rel="stylesheet" href="style/css/main.css">
-  <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css'
-    rel='stylesheet' />
+    href="/public/images/hamburg-logo-favicon.jpg">
+  <link rel="stylesheet" href="/node/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/public/style/css/main.css">
+  <link rel="stylesheet" href='/node/mapbox-gl/dist/mapbox-gl.css'>
 </head>
 
 <body>
@@ -21,7 +21,8 @@
       <div class="sidebar-content">
         <div class="sidebar-img">
           <h1 class="logo-text position-absolute">Hamburg</h1>
-          <img class="logo" src="assets/Hamburg-logo.svg" alt="Hamburg Logo">
+          <img class="logo" src="/public/images/Hamburg-logo.svg"
+            alt="Hamburg Logo">
         </div>
 
         <div class="sidebar-header">
@@ -110,12 +111,12 @@
     </nav>
   </div>
 
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/axios/dist/axios.min.js" charset="utf-8"></script>
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'>
-  </script>
-  <script src="js/mapbox.js"></script>
-  <script src="js/main.js"></script>
+  <script src="/node/jquery/dist/jquery.min.js"></script>
+  <script src="/node/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/node/axios/dist/axios.min.js"></script>
+  <script src="/node/mapbox-gl/dist/mapbox-gl.js"></script>
+  <script src="/public/js/mapbox.js"></script>
+  <script src="/public/js/main.js"></script>
 
 </body>
 

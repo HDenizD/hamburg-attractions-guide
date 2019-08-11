@@ -26,7 +26,7 @@ function removeActives() {
 
 // AXIOS LOAD LOCATIONS FROM JSON FUNCTION
 function loadLocations() {
-  axios.get('js/lngLatLocation.json')
+  axios.get('/public/js/lngLatLocation.json')
     .then((response) => {
       const lngLatLocation = response.data;
       // MAPBOX GEOJSON
@@ -197,7 +197,7 @@ function loadLocations() {
         let el = document.createElement('div');
         el.className = 'marker';
         el.className = locationName;
-        el.style.backgroundImage = 'url("../../assets/map-marker.png")';
+        el.style.backgroundImage = 'url("/public/images/map-marker.png")';
         el.style.width = '30px';
         el.style.height = '30px';
         el.style.top = '-13px';
