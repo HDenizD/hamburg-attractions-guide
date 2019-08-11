@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "scss": "node-sass --watch style/scss/main.scss -o style/css",
-    "start": "Test"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "jquery": "^3.4.1",
     "mapbox-gl": "^1.2.0",
     "node-sass": "^4.12.0",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.15.0",
+    "server": "^1.0.19"
   }
 }
