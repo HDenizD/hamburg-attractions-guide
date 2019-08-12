@@ -1,5 +1,5 @@
 # Hamburg Attraction Guide App :city_sunset:
-![Preview Screenshot](public/images/hamburg-attraction-guide-screenshot.png)
+![Preview Screenshot](public/images/app_preview.gif)
 > If you have always wanted to visit the most beautiful city in Germany, this is your guide. (Berlin looks like a one big construction site against it) :wink:
 
 ### Live Preview
