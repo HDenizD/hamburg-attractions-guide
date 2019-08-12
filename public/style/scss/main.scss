@@ -10,7 +10,9 @@
   height: 100vh;
 
   .sidebar-toggle {
-    border-radius: 0px 10px 10px 0px;
+    transition: all 0.5s ease-out;
+    font-size: 18px;
+    border-radius: 0 10px 10px 0;
     transform: translate(0%, -50%);
     width: 40px;
     height: 150px;
@@ -21,6 +23,7 @@
     border: solid black 1px;
     background-color: #ffffff;
   }
+
   .sidebar-toggle:focus {
     outline: none;
   }
@@ -78,11 +81,12 @@
     }
   }
 }
-// @media (max-width: 1920px) {
-//   #info-box {
-//     left: 77% !important;
-//   }
-// }
+@media (max-width: 500px) {
+  #sidebar {
+    height: 100% !important;
+    overflow: overlay;
+  }
+}
 // @media (max-width: 1680px) {
 //   #info-box {
 //     left: 73%!important;
