@@ -18,7 +18,7 @@ Using npm:
 npm install
 ```
 
-Start Aplication:
+Start Application:
 ```
 npm run start
 ```
