@@ -2,6 +2,8 @@
 ![Preview Screenshot](public/images/hamburg-attraction-guide-screenshot.png)
 > If you have always wanted to visit the most beautiful city in Germany, this is your guide. (Berlin looks like a one big construction site against it) :wink:
 
+### Live Preview
+[Hamburg Attractions Guide](https://hamburg-attractions-guide.herokuapp.com/)
 
 ### :computer: Core - Technologies:
 * [node: v10.16.0 LTS](https://nodejs.org/de/download/)
