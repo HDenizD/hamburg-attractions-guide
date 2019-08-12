@@ -8,7 +8,7 @@
 * [npm: v6.9.0](https://nodejs.org/de/download/)
 * [mapbox-gl.js](https://docs.mapbox.com/mapbox-gl-js/api/)
 * [axios.js](https://github.com/axios/axios)
-* [boostrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+* [bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
 * [node-sass](https://www.npmjs.com/package/node-sass)
 * [express.js](https://expressjs.com/)
 
