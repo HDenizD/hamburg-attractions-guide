@@ -28,4 +28,4 @@ Start SCSS Compiler:
 npm run scss
 ```
 
-Application will be as default running at: [localhost:3000](http:://localhost:3000)
+Application will be as default running at: [localhost:3000](http://localhost:3000)
