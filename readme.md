@@ -20,6 +20,8 @@ npm install
 
 Start Aplication:
 ```
-npm run started
+npm run start
 ```
-Application will be as default running at [localhost:3000](localhost:3000)
+Application will be as default running at:
+
+[localhost:3000](localhost:3000)
