@@ -2,9 +2,7 @@
 const sidebar = document.querySelector('#sidebar');
 const sidebarToggle = document.querySelector('.sidebar-toggle');
 
-sidebarToggle.addEventListener('click', () => {
-
-  console.log(sidebarToggle.style.left);
+function toggleSidebar() {
   if (sidebar.style.left == '-300px') {
     sidebarToggle.innerHTML = '<';
     sidebar.style.left = '0px';
@@ -14,4 +12,8 @@ sidebarToggle.addEventListener('click', () => {
     sidebar.style.left = '-300px';
     sidebarToggle.style.left = '-1px';
   }
+}
+
+sidebarToggle.addEventListener('click', () => {
+  toggleSidebar();
 });
