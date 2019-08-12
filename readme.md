@@ -22,4 +22,4 @@ Start Aplication:
 ```
 npm run start
 ```
-Application will be as default running at: [localhost:3000](http:://localhost:3000)
+Application will be as default running at: [localhost:3000](http://localhost:3000)
