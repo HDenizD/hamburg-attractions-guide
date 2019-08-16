@@ -24,21 +24,51 @@ function removeActives() {
   }
 }
 
-function createListItem(name, lng, lat, link) {
-  const listItem = document.createElement('li');
-  listItem.classList.add('list-group-item');
-  listItem.classList.add(`btn-${name}`);
+function updateLocationList() {
 
+}
+
+function locationInputFilter() {
+  let inputVal = document.querySelector('.location-filter');
+  inputVal.addEventListener('keyup', () => {
+    return inputVal.value;
+  });
 }
 
 // AXIOS LOAD LOCATIONS FROM JSON FUNCTION
 function loadLocations() {
   axios.get('/public/js/lngLatLocation.json')
     .then((response) => {
-      // FILTER HERE FOR INPUT.value
-      locationInputFilter();
-
       const lngLatLocation = response.data;
+
+      // LOAD LOCATION LIST
+      lngLatLocation.forEach((item) => {
+        // TODO: ADD A FILTER FUNCTION HERE
+        locationInputFilter();
+
+        // DEFAULT LOAD ALL LOCATIONS
+        let listItem = document.createElement('li');
+        listItem.classList.add('list-group-item', `btn-${item.id}`);
+        listItem.innerHTML = item.name;
+        document.querySelector('.list-group').appendChild(listItem);
+
+        let link = document.createElement('a');
+        link.classList.add('info', 'badge', 'badge-warning');
+        link.setAttribute('target', '_blank');
+        link.innerHTML = '?';
+        link.href = item.link;
+        document.querySelector(`.btn-${item.id}`).appendChild(link);
+
+      });
+
+      
+      let inputVal = document.querySelector('.location-filter');
+      inputVal.addEventListener('keyup', () => {
+
+
+        return inputVal.value;
+      });
+
       // console.log(lngLatLocation);
 
       // const geoJson = {};
@@ -71,13 +101,7 @@ function loadLocations() {
       };
       console.log(geoJson);
 
-      function locationInputFilter() {
-        let inputVal = document.querySelector('.location-filter');
-        let listItem = document.createElement("li");
-        inputVal.addEventListener('keyup', () => {
-          return inputVal.value;
-        });
-      }
+
 
       // CREATE AND SET MAP MARKERS
       geoJson.features.forEach(function(marker) {
