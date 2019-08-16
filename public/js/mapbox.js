@@ -24,178 +24,63 @@ function removeActives() {
   }
 }
 
+function createListItem(name, lng, lat, link) {
+  const listItem = document.createElement('li');
+  listItem.classList.add('list-group-item');
+  listItem.classList.add(`btn-${name}`);
+
+
+}
+
 // AXIOS LOAD LOCATIONS FROM JSON FUNCTION
 function loadLocations() {
   axios.get('/public/js/lngLatLocation.json')
     .then((response) => {
+      // FILTER HERE FOR INPUT.value
+      locationInputFilter();
       const lngLatLocation = response.data;
+      console.log(lngLatLocation);
+      // console.log(lngLatLocation);
       // MAPBOX GEOJSON
-      const geoJson = {
-        "type": "FeatureCollection",
-        "features": [{
-            "type": "Feature",
-            "properties": {
-              "message": "alster"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                lngLatLocation.alster[0],
-                lngLatLocation.alster[1]
-              ]
-            }
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "message": "elbphilharmonie"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                lngLatLocation.elbphilharmonie[0],
-                lngLatLocation.elbphilharmonie[1]
-              ]
-            }
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "message": "rathaus"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                lngLatLocation.rathaus[0],
-                lngLatLocation.rathaus[1]
-              ]
-            }
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "message": "planten-un-bloomen"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                lngLatLocation.plantenUnBloomen[0],
-                lngLatLocation.plantenUnBloomen[1]
-              ]
-            }
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "message": "elbstrand"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                lngLatLocation.elbstrand[0],
-                lngLatLocation.elbstrand[1]
-              ]
-            }
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "message": "jungfernstieg"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                lngLatLocation.jungfernstieg[0],
-                lngLatLocation.jungfernstieg[1]
-              ]
-            }
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "message": "reeperbahn"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                lngLatLocation.reeperbahn[0],
-                lngLatLocation.reeperbahn[1]
-              ]
-            }
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "message": "hamburg-dungeon"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                lngLatLocation.hamburgDungeon[0],
-                lngLatLocation.hamburgDungeon[1]
-              ]
-            }
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "message": "hamburger-dom"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                lngLatLocation.hamburgDom[0],
-                lngLatLocation.hamburgDom[1]
-              ]
-            }
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "message": "landungsbrücken"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                lngLatLocation.landungsbruecken[0],
-                lngLatLocation.landungsbruecken[1]
-              ]
-            }
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "message": "speicherstadt"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                lngLatLocation.speicherstadt[0],
-                lngLatLocation.speicherstadt[1]
-              ]
-            }
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "message": "fischmarkt"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                lngLatLocation.fischmarkt[0],
-                lngLatLocation.fischmarkt[1]
-              ]
-            }
-          },
-        ]
-      };
+      
+      const geoJson = {};
+
+      // const geoJson = {
+      //   "type": "FeatureCollection",
+      //   "features": [{
+      //       "type": "Feature",
+      //       "geometry": {
+      //         "type": "Point",
+      //         "coordinates": [
+      //           lngLatLocation.alster[0],
+      //           lngLatLocation.alster[1]
+      //         ]
+      //       }
+      //     },
+      //
+      //   ]
+      // };
+
+
+      function locationInputFilter() {
+        let inputVal = document.querySelector('.location-filter');
+        let listItem = document.createElement("li");
+        inputVal.addEventListener('keyup', () => {
+          return inputVal.value;
+        });
+      }
 
       // CREATE AND SET MAP MARKERS
       geoJson.features.forEach(function(marker) {
         let locationName = marker.properties.message;
+
+        // TODO: IF Input != '' remove all items from list and all markers
+        // fetch by keypressdown
+        // console.log(marker);
+
+        locationInputFilter();
+
         let el = document.createElement('div');
-        el.className = 'marker';
         el.className = locationName;
         el.style.backgroundImage = 'url("/public/images/map-marker.png")';
         el.style.width = '30px';
@@ -261,8 +146,6 @@ function loadLocations() {
       flyToLocation('.btn-fischmarkt',
         lngLatLocation.fischmarkt[0],
         lngLatLocation.fischmarkt[1]);
-
-
 
     })
     .catch((error) => {
