@@ -29,7 +29,6 @@ function createListItem(name, lng, lat, link) {
   listItem.classList.add('list-group-item');
   listItem.classList.add(`btn-${name}`);
 
-
 }
 
 // AXIOS LOAD LOCATIONS FROM JSON FUNCTION
@@ -38,29 +37,39 @@ function loadLocations() {
     .then((response) => {
       // FILTER HERE FOR INPUT.value
       locationInputFilter();
+
       const lngLatLocation = response.data;
-      console.log(lngLatLocation);
+      // console.log(lngLatLocation);
+
+      // const geoJson = {};
+      // MAYBE A FOR LOOP
+      // lngLatLocation.forEach((location) => {
+      //   // console.log(location.name);
+      //   geoJson.features.geometry.coordinates = [lngLatLocation.coordinates];
+      //
+      // });
+
+      // console.log(geoJson);
       // console.log(lngLatLocation);
       // MAPBOX GEOJSON
-      
-      const geoJson = {};
 
-      // const geoJson = {
-      //   "type": "FeatureCollection",
-      //   "features": [{
-      //       "type": "Feature",
-      //       "geometry": {
-      //         "type": "Point",
-      //         "coordinates": [
-      //           lngLatLocation.alster[0],
-      //           lngLatLocation.alster[1]
-      //         ]
-      //       }
-      //     },
-      //
-      //   ]
-      // };
 
+      const geoJson = {
+        "type": "FeatureCollection",
+        "features": [{
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                9.992061,
+                53.550252
+              ]
+            }
+          },
+
+        ]
+      };
+      console.log(geoJson);
 
       function locationInputFilter() {
         let inputVal = document.querySelector('.location-filter');
