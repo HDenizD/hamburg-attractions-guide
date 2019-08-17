@@ -55,30 +55,28 @@ function loadLocations() {
   axios.get('/public/js/lngLatLocation.json')
     .then((response) => {
       const lngLatLocation = response.data;
-
-      // LOAD LOCATION LIST
-
-
+      // LOAD FILTERED LOCATION LIST
       let input = document.querySelector('.location-filter');
       input.addEventListener('keyup', () => {
         const filteredLocations = lngLatLocation.filter(({
           name
         }) => name.toLowerCase().startsWith(input.value
           .toLowerCase()));
-        console.log(filteredLocations);
         removeListItems();
-
+        filteredLocations.forEach((item) => {
+          createListItem(item);
+        });
       });
-
-
-
       // DEFAULT LOAD ALL LOCATIONS
       lngLatLocation.forEach((item) => {
         createListItem(item);
       });
 
-
-      // console.log(lngLatLocation);
+      // TODO: MAKE GEOJSON BE REACTIVE LIKE THE LIST
+      /*
+      1. Filtered = filteredLocations
+      2. All = lngLatLocation
+      */
 
       // const geoJson = {};
       // MAYBE A FOR LOOP
