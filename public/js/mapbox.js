@@ -32,7 +32,7 @@ function locationInputFilter() {
 
 
 }
-
+console.log(window);
 // AXIOS LOAD LOCATIONS FROM JSON FUNCTION
 function loadLocations() {
   axios.get('/public/js/lngLatLocation.json')
@@ -49,7 +49,6 @@ function loadLocations() {
         console.log(filteredLocations);
 
       });
-
 
 
 
