@@ -28,9 +28,26 @@ function updateLocationList() {
 
 }
 
-function locationInputFilter() {
+function createListItem(item) {
+  let listItem = document.createElement('li');
+  listItem.classList.add('list-group-item', `btn-${item.id}`);
+  listItem.innerHTML = item.name;
+  document.querySelector('.list-group').appendChild(listItem);
 
+  let link = document.createElement('a');
+  link.classList.add('info', 'badge', 'badge-warning');
+  link.setAttribute('target', '_blank');
+  link.innerHTML = '?';
+  link.href = item.link;
+  document.querySelector(`.btn-${item.id}`).appendChild(link);
+}
 
+// CLEAR LOCATION LIST ITEMS
+function removeListItems() {
+  let listItems = document.querySelector('ul');
+  while (listItems.firstChild) {
+    listItems.removeChild(listItems.firstChild);
+  }
 }
 
 // AXIOS LOAD LOCATIONS FROM JSON FUNCTION
@@ -40,13 +57,16 @@ function loadLocations() {
       const lngLatLocation = response.data;
 
       // LOAD LOCATION LIST
+
+
       let input = document.querySelector('.location-filter');
       input.addEventListener('keyup', () => {
-        // FILTER HERE FOR INPUT VALUE
         const filteredLocations = lngLatLocation.filter(({
           name
-        }) => name.toLowerCase().startsWith(input.value.toLowerCase()));
+        }) => name.toLowerCase().startsWith(input.value
+          .toLowerCase()));
         console.log(filteredLocations);
+        removeListItems();
 
       });
 
@@ -54,17 +74,7 @@ function loadLocations() {
 
       // DEFAULT LOAD ALL LOCATIONS
       lngLatLocation.forEach((item) => {
-        let listItem = document.createElement('li');
-        listItem.classList.add('list-group-item', `btn-${item.id}`);
-        listItem.innerHTML = item.name;
-        document.querySelector('.list-group').appendChild(listItem);
-
-        let link = document.createElement('a');
-        link.classList.add('info', 'badge', 'badge-warning');
-        link.setAttribute('target', '_blank');
-        link.innerHTML = '?';
-        link.href = item.link;
-        document.querySelector(`.btn-${item.id}`).appendChild(link);
+        createListItem(item);
       });
 
 
