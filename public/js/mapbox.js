@@ -55,6 +55,8 @@ function loadLocations() {
   axios.get('/public/js/lngLatLocation.json')
     .then((response) => {
       const lngLatLocation = response.data;
+      let geoJson = {};
+
       // LOAD FILTERED LOCATION LIST
       let input = document.querySelector('.location-filter');
       input.addEventListener('keyup', () => {
@@ -70,6 +72,7 @@ function loadLocations() {
       // DEFAULT LOAD ALL LOCATIONS
       lngLatLocation.forEach((item) => {
         createListItem(item);
+        addLocationToGeoJson(item.coordinates[0], item.coordinates[1]);
       });
 
       // TODO: MAKE GEOJSON BE REACTIVE LIKE THE LIST
@@ -78,115 +81,93 @@ function loadLocations() {
       2. All = lngLatLocation
       */
 
-      // const geoJson = {};
-      // MAYBE A FOR LOOP
-      // lngLatLocation.forEach((location) => {
-      //   // console.log(location.name);
-      //   geoJson.features.geometry.coordinates = [lngLatLocation.coordinates];
-      //
-      // });
 
-      // console.log(geoJson);
-      // console.log(lngLatLocation);
-      // MAPBOX GEOJSON
+      function addLocationToGeoJson(lng, lat) {
+        let geoObj = {};
+        const geoItem = {
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [lng, lat]
+          }
+        }
+        geoJson = Object.assign(geoObj, geoItem);
+        return geoJson;
+      }
 
-
-      const geoJson = {
-        "type": "FeatureCollection",
-        "features": [{
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                9.992061,
-                53.550252
-              ]
-            }
-          },
-
-        ]
-      };
-      // console.log(geoJson);
-
-
+      console.log(geoJson);
 
       // CREATE AND SET MAP MARKERS
-      //   geoJson.features.forEach(function(marker) {
-      //     let locationName = marker.properties.message;
+      geoJson.features.forEach((marker) => {
+        let locationName = marker.properties.message;
+
+        let el = document.createElement('div');
+        el.className = locationName;
+        el.style.backgroundImage = 'url("/public/images/map-marker.png")';
+        el.style.width = '30px';
+        el.style.height = '30px';
+        el.style.top = '-13px';
+
+        // // EVENT FOR INFO-BOX
+        // el.addEventListener('click', function() {
+        //   window.alert(marker.properties.message);
+        // });
+
+        // ADD MARKERS TO MAP
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+      });
+
+      // FLY TO LOCATION EVENTS
+      // flyToLocation('.btn-alster',
+      //   lngLatLocation.alster[0],
+      //   lngLatLocation.alster[1]);
       //
-      //     // TODO: IF Input != '' remove all items from list and all markers
-      //     // fetch by keypressdown
-      //     // console.log(marker);
+      // flyToLocation('.btn-elbphilharmonie',
+      //   lngLatLocation.elbphilharmonie[0],
+      //   lngLatLocation.elbphilharmonie[1]);
       //
-      //     locationInputFilter();
+      // flyToLocation('.btn-rathaus',
+      //   lngLatLocation.rathaus[0],
+      //   lngLatLocation.rathaus[1]);
       //
-      //     let el = document.createElement('div');
-      //     el.className = locationName;
-      //     el.style.backgroundImage = 'url("/public/images/map-marker.png")';
-      //     el.style.width = '30px';
-      //     el.style.height = '30px';
-      //     el.style.top = '-13px';
+      // flyToLocation('.btn-planten',
+      //   lngLatLocation.plantenUnBloomen[0],
+      //   lngLatLocation.plantenUnBloomen[1]);
       //
-      //     // // EVENT FOR INFO-BOX
-      //     // el.addEventListener('click', function() {
-      //     //   window.alert(marker.properties.message);
-      //     // });
+      // flyToLocation('.btn-elbstrand',
+      //   lngLatLocation.elbstrand[0],
+      //   lngLatLocation.elbstrand[1]);
       //
-      //     // ADD MARKERS TO MAP
-      //     new mapboxgl.Marker(el)
-      //       .setLngLat(marker.geometry.coordinates)
-      //       .addTo(map);
-      //   });
+      // flyToLocation('.btn-jungfernstieg',
+      //   lngLatLocation.jungfernstieg[0],
+      //   lngLatLocation.jungfernstieg[1]);
       //
-      //   // FLY TO LOCATION EVENTS
-      //   flyToLocation('.btn-alster',
-      //     lngLatLocation.alster[0],
-      //     lngLatLocation.alster[1]);
+      // flyToLocation('.btn-reeperbahn',
+      //   lngLatLocation.reeperbahn[0],
+      //   lngLatLocation.reeperbahn[1]);
       //
-      //   flyToLocation('.btn-elbphilharmonie',
-      //     lngLatLocation.elbphilharmonie[0],
-      //     lngLatLocation.elbphilharmonie[1]);
+      // flyToLocation('.btn-hamburg-dungeon',
+      //   lngLatLocation.hamburgDungeon[0],
+      //   lngLatLocation.hamburgDungeon[1]);
       //
-      //   flyToLocation('.btn-rathaus',
-      //     lngLatLocation.rathaus[0],
-      //     lngLatLocation.rathaus[1]);
+      // flyToLocation('.btn-hamburg-dom',
+      //   lngLatLocation.hamburgDom[0],
+      //   lngLatLocation.hamburgDom[1]);
       //
-      //   flyToLocation('.btn-planten',
-      //     lngLatLocation.plantenUnBloomen[0],
-      //     lngLatLocation.plantenUnBloomen[1]);
+      // flyToLocation('.btn-landungsbruecken',
+      //   lngLatLocation.landungsbruecken[0],
+      //   lngLatLocation.landungsbruecken[1]);
       //
-      //   flyToLocation('.btn-elbstrand',
-      //     lngLatLocation.elbstrand[0],
-      //     lngLatLocation.elbstrand[1]);
+      // flyToLocation('.btn-speicherstadt',
+      //   lngLatLocation.speicherstadt[0],
+      //   lngLatLocation.speicherstadt[1]);
       //
-      //   flyToLocation('.btn-jungfernstieg',
-      //     lngLatLocation.jungfernstieg[0],
-      //     lngLatLocation.jungfernstieg[1]);
-      //
-      //   flyToLocation('.btn-reeperbahn',
-      //     lngLatLocation.reeperbahn[0],
-      //     lngLatLocation.reeperbahn[1]);
-      //
-      //   flyToLocation('.btn-hamburg-dungeon',
-      //     lngLatLocation.hamburgDungeon[0],
-      //     lngLatLocation.hamburgDungeon[1]);
-      //
-      //   flyToLocation('.btn-hamburg-dom',
-      //     lngLatLocation.hamburgDom[0],
-      //     lngLatLocation.hamburgDom[1]);
-      //
-      //   flyToLocation('.btn-landungsbruecken',
-      //     lngLatLocation.landungsbruecken[0],
-      //     lngLatLocation.landungsbruecken[1]);
-      //
-      //   flyToLocation('.btn-speicherstadt',
-      //     lngLatLocation.speicherstadt[0],
-      //     lngLatLocation.speicherstadt[1]);
-      //
-      //   flyToLocation('.btn-fischmarkt',
-      //     lngLatLocation.fischmarkt[0],
-      //     lngLatLocation.fischmarkt[1]);
-      //
+      // flyToLocation('.btn-fischmarkt',
+      //   lngLatLocation.fischmarkt[0],
+      //   lngLatLocation.fischmarkt[1]);
+
     })
     .catch((error) => {
       console.log(error);
