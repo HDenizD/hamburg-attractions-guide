@@ -55,7 +55,7 @@ function loadLocations() {
   axios.get('/public/js/lngLatLocation.json')
     .then((response) => {
       const lngLatLocation = response.data;
-      let geoJson = {};
+
 
       // LOAD FILTERED LOCATION LIST
       let input = document.querySelector('.location-filter');
@@ -69,11 +69,30 @@ function loadLocations() {
           createListItem(item);
         });
       });
+
+
+
+      let geoJson = {};
       // DEFAULT LOAD ALL LOCATIONS
       lngLatLocation.forEach((item) => {
         createListItem(item);
-        addLocationToGeoJson(item.coordinates[0], item.coordinates[1]);
+        const geoItem = {
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [item.coordinates[0], item.coordinates[1]]
+          }
+        }
+
+        geoJson = {
+          ...geoItem
+        };
+        console.log(geoJson);
+        return geoJson;
+        // addLocationToGeoJson(item.coordinates[0], item.coordinates[1]);
       });
+      console.log(geoJson);
+
 
       // TODO: MAKE GEOJSON BE REACTIVE LIKE THE LIST
       /*
@@ -82,20 +101,10 @@ function loadLocations() {
       */
 
 
-      function addLocationToGeoJson(lng, lat) {
-        let geoObj = {};
-        const geoItem = {
-          type: "Feature",
-          geometry: {
-            type: "Point",
-            coordinates: [lng, lat]
-          }
-        }
-        geoJson = Object.assign(geoObj, geoItem);
-        return geoJson;
-      }
+      // function addLocationToGeoJson(lng, lat) {
+      //
+      // }
 
-      console.log(geoJson);
 
       // CREATE AND SET MAP MARKERS
       geoJson.features.forEach((marker) => {
