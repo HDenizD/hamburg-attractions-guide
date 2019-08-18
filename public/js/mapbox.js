@@ -25,12 +25,15 @@ function removeActives() {
   }
 }
 
+// CREATE SIDEBAR LIST ITEMS
 function createListItem(item) {
+  // SIDEBAR LIST ITEM
   let listItem = document.createElement('li');
   listItem.classList.add('list-group-item', `btn-${item.id}`);
   listItem.innerHTML = item.name;
   document.querySelector('.list-group').appendChild(listItem);
 
+  // SIDEBAR ITEM LINK
   let link = document.createElement('a');
   link.classList.add('info', 'badge', 'badge-warning');
   link.setAttribute('target', '_blank');
@@ -45,7 +48,6 @@ function clearSidebarItemsAndMarkers() {
   mapMarkers.forEach((marker) => {
     marker.remove();
   });
-
   let listItems = document.querySelectorAll('li');
   listItems.forEach((listItem) => {
     listItem.remove();
@@ -95,6 +97,7 @@ function loadLocations() {
           });
         });
 
+        // SIDEBAR INPUT FILTERED LOCATIONS
         filteredLocationsArr.forEach((marker) => {
           let locationName = marker.id;
           let el = document.createElement('div');
@@ -120,13 +123,11 @@ function loadLocations() {
         createListItem(item);
         addLocationToGeoJson(item.id, item.coordinates[0], item
           .coordinates[1]);
-
       });
 
       // // CREATE AND SET MAP MARKERS
       geoJson.forEach((marker) => {
         let locationName = marker.properties.title;
-
         let el = document.createElement('div');
         el.className = locationName;
         el.style.backgroundImage = 'url("/public/images/map-marker.png")';
@@ -142,7 +143,6 @@ function loadLocations() {
 
       // FLY TO LOCATIONS EVENTS
       flyToLocationEvents(lngLatLocation);
-
 
     })
     .catch((error) => {
