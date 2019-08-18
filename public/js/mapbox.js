@@ -72,24 +72,12 @@ function loadLocations() {
 
 
 
-      let geoJson = {};
+      let geoJson = [];
       // DEFAULT LOAD ALL LOCATIONS
       lngLatLocation.forEach((item) => {
         createListItem(item);
-        const geoItem = {
-          type: "Feature",
-          geometry: {
-            type: "Point",
-            coordinates: [item.coordinates[0], item.coordinates[1]]
-          }
-        }
+        addLocationToGeoJson(item.id, item.coordinates[0], item.coordinates[1]);
 
-        geoJson = {
-          ...geoItem
-        };
-        console.log(geoJson);
-        return geoJson;
-        // addLocationToGeoJson(item.coordinates[0], item.coordinates[1]);
       });
       console.log(geoJson);
 
@@ -101,14 +89,27 @@ function loadLocations() {
       */
 
 
-      // function addLocationToGeoJson(lng, lat) {
-      //
-      // }
+      function addLocationToGeoJson(id, lat, lng) {
+        const geoItem = {
+          type: "feature",
+          properties: {
+            title: id
+          },
+          geometry: {
+            type: "Point",
+            coordinates: [lat, lng]
+          }
+        }
+
+        geoJson.push({
+          ...geoItem
+        });
+      }
 
 
       // CREATE AND SET MAP MARKERS
-      geoJson.features.forEach((marker) => {
-        let locationName = marker.properties.message;
+      geoJson.forEach((marker) => {
+        let locationName = marker.properties.title;
 
         let el = document.createElement('div');
         el.className = locationName;
