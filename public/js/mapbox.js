@@ -57,6 +57,7 @@ function loadLocations() {
       const lngLatLocation = response.data;
 
 
+      // TODO: add filtert for markers similar to the sidebar list
       // LOAD FILTERED LOCATION LIST
       let input = document.querySelector('.location-filter');
       input.addEventListener('keyup', () => {
@@ -76,18 +77,11 @@ function loadLocations() {
       // DEFAULT LOAD ALL LOCATIONS
       lngLatLocation.forEach((item) => {
         createListItem(item);
-        addLocationToGeoJson(item.id, item.coordinates[0], item.coordinates[1]);
+        addLocationToGeoJson(item.id, item.coordinates[0], item
+          .coordinates[1]);
 
       });
       console.log(geoJson);
-
-
-      // TODO: MAKE GEOJSON BE REACTIVE LIKE THE LIST
-      /*
-      1. Filtered = filteredLocations
-      2. All = lngLatLocation
-      */
-
 
       function addLocationToGeoJson(id, lat, lng) {
         const geoItem = {
@@ -105,6 +99,14 @@ function loadLocations() {
           ...geoItem
         });
       }
+
+      // TODO: MAKE GEOJSON BE REACTIVE LIKE THE LIST
+      /*
+      1. Filtered = filteredLocations
+      2. All = lngLatLocation
+      */
+
+
 
 
       // CREATE AND SET MAP MARKERS
