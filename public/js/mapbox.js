@@ -42,12 +42,17 @@ function createListItem(item) {
   document.querySelector(`.btn-${item.id}`).appendChild(link);
 }
 
-// CLEAR LOCATION LIST ITEMS
-function removeListItems() {
-  let listItems = document.querySelector('ul');
-  while (listItems.firstChild) {
-    listItems.removeChild(listItems.firstChild);
-  }
+// CLEAR SIDEBAR & MARKER ITEMS
+function clearSidebarItemsAndMarkers() {
+  let mapMarkers = document.querySelectorAll('.mapboxgl-marker');
+  mapMarkers.forEach((marker) => {
+    marker.remove();
+  });
+
+  let listItems = document.querySelectorAll('li');
+  listItems.forEach((listItem) => {
+    listItem.remove();
+  });
 }
 
 // AXIOS LOAD LOCATIONS FROM JSON FUNCTION
@@ -55,9 +60,8 @@ function loadLocations() {
   axios.get('/public/js/lngLatLocation.json')
     .then((response) => {
       const lngLatLocation = response.data;
+      let geoJson = [];
 
-
-      // TODO: add filtert for markers similar to the sidebar list
       // LOAD FILTERED LOCATION LIST
       let input = document.querySelector('.location-filter');
       input.addEventListener('keyup', () => {
@@ -65,15 +69,36 @@ function loadLocations() {
           name
         }) => name.toLowerCase().startsWith(input.value
           .toLowerCase()));
-        removeListItems();
+        clearSidebarItemsAndMarkers();
+        let filteredLocationsArr = [];
         filteredLocations.forEach((item) => {
           createListItem(item);
+          addLocationToGeoJson(item.id, item.coordinates[0], item
+            .coordinates[1]);
+          filteredLocationsArr.push({
+            ...item
+          });
         });
+
+        filteredLocationsArr.forEach((marker) => {
+          let locationName = marker.id;
+
+          let el = document.createElement('div');
+          el.className = locationName;
+          el.style.backgroundImage =
+            'url("/public/images/map-marker.png")';
+          el.style.width = '30px';
+          el.style.height = '30px';
+          el.style.top = '-13px';
+
+          // ADD MARKERS TO MAP
+          new mapboxgl.Marker(el)
+            .setLngLat(marker.coordinates)
+            .addTo(map);
+        });
+
       });
 
-
-
-      let geoJson = [];
       // DEFAULT LOAD ALL LOCATIONS
       lngLatLocation.forEach((item) => {
         createListItem(item);
@@ -81,7 +106,7 @@ function loadLocations() {
           .coordinates[1]);
 
       });
-      console.log(geoJson);
+      // console.log(geoJson);
 
       function addLocationToGeoJson(id, lat, lng) {
         const geoItem = {
@@ -100,16 +125,7 @@ function loadLocations() {
         });
       }
 
-      // TODO: MAKE GEOJSON BE REACTIVE LIKE THE LIST
-      /*
-      1. Filtered = filteredLocations
-      2. All = lngLatLocation
-      */
-
-
-
-
-      // CREATE AND SET MAP MARKERS
+      // // CREATE AND SET MAP MARKERS
       geoJson.forEach((marker) => {
         let locationName = marker.properties.title;
 
@@ -120,16 +136,12 @@ function loadLocations() {
         el.style.height = '30px';
         el.style.top = '-13px';
 
-        // // EVENT FOR INFO-BOX
-        // el.addEventListener('click', function() {
-        //   window.alert(marker.properties.message);
-        // });
-
         // ADD MARKERS TO MAP
         new mapboxgl.Marker(el)
           .setLngLat(marker.geometry.coordinates)
           .addTo(map);
       });
+
 
       // FLY TO LOCATION EVENTS
       // flyToLocation('.btn-alster',
