@@ -1,50 +1,74 @@
-{
-  "alster": [
-    9.997649,
-    53.557344
-  ],
-  "elbphilharmonie": [
-    9.984198,
-    53.541267
-  ],
-  "rathaus": [
-    9.992061,
-    53.550252
-  ],
-  "plantenUnBloomen": [
-    9.982028,
-    53.560427
-  ],
-  "elbstrand": [
-    9.904346,
-    53.544347
-  ],
-  "jungfernstieg": [
-    9.991770,
-    53.553800
-  ],
-  "reeperbahn": [
-    9.962951,
-    53.549684
-  ],
-  "hamburgDungeon": [
-    9.989484,
-    53.543938
-  ],
-  "hamburgDom": [
-    9.968232,
-    53.554157
-  ],
-  "landungsbruecken": [
-    9.968205,
-    53.545781
-  ],
-  "speicherstadt": [
-    9.994603,
-    53.544438
-  ],
-  "fischmarkt": [
-    9.933653,
-    53.544833
-  ]
-}
+[
+  {
+    "id": "alster",
+    "name": "Alster",
+    "link": "https://en.wikipedia.org/wiki/Alster",
+    "coordinates": [9.997649, 53.557344]
+  },
+  {
+    "id": "elbphilharmonie",
+    "name": "Elbphilharmonie",
+    "link": "https://www.elbphilharmonie.de/en/elbphilharmonie",
+    "coordinates": [9.984198, 53.541267]
+  },
+  {
+    "id": "rathaus",
+    "name": "Rathaus / TownHall",
+    "link": "https://en.wikipedia.org/wiki/Hamburg_City_Hall",
+    "coordinates": [9.992061, 53.550252]
+  },
+  {
+    "id": "plantenUnBloomen",
+    "name": "Planten Un Blomen",
+    "link": "https://www.hamburg.com/explore/outdoors/11872624/planten-un-blomen/",
+    "coordinates": [9.982028, 53.560427]
+  },
+  {
+    "id": "elbstrand",
+    "name": "Elbstrand / Elb Beach",
+    "link": "https://www.hamburg.com/visitors/hamburg-for/11889590/beach-lovers/",
+    "coordinates": [9.904346, 53.544347]
+  },
+  {
+    "id": "jungfernstieg",
+    "name": "Jungfernstieg",
+    "link": "https://en.wikipedia.org/wiki/Jungfernstieg",
+    "coordinates": [9.991770, 53.553800]
+  },
+  {
+    "id": "reeperbahn",
+    "name": "Repperbahn / Red light dist.",
+    "link": "https://en.wikipedia.org/wiki/Reeperbahn",
+    "coordinates": [9.962951, 53.549684]
+  },
+  {
+    "id": "hamburgDungeon",
+    "name": "Hamburge Dungeon",
+    "link": "https://www.thedungeons.com/hamburg/en/",
+    "coordinates": [9.989484, 53.543938]
+  },
+  {
+    "id": "hamburgDom",
+    "name": "Hamburger Dom",
+    "link": "https://en.wikipedia.org/wiki/Hamburger_Dom",
+    "coordinates": [9.968232, 53.554157]
+  },
+  {
+    "id": "landungsbruecken",
+    "name": "Landungsbrücken",
+    "link": "https://en.wikipedia.org/wiki/Port_of_Hamburg",
+    "coordinates": [9.968205, 53.545781]
+  },
+  {
+    "id": "speicherstadt",
+    "name": "Speicherstadt",
+    "link": "https://en.wikipedia.org/wiki/Speicherstadt",
+    "coordinates": [9.994603, 53.544438]
+  },
+  {
+    "id": "fischmarkt",
+    "name": "Fischmarkt / Fish Market",
+    "link": "https://www.hamburg.com/sights/maritime/11747570/fish-market/",
+    "coordinates": [9.933653, 53.544833]
+  }
+]
