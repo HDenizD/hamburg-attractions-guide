@@ -1,19 +1,20 @@
-// FLY TO LOCATION FUNCTION
-function flyToLocation(selector, lng, lat) {
-  let el = document.querySelector(selector);
-  el.addEventListener('click', () => {
-    // REMOVE CLASS .active
-    removeActives();
-    // ADD CLASS .active
-    el.classList.add('active');
-
-    map.flyTo({
-      center: [
-        lng,
-        lat
-      ],
-      zoom: 15,
-    })
+// FLY TO LOCATIONS
+function flyToLocationEvents(array) {
+  array.forEach((item) => {
+    let el = document.querySelector(`.btn-${item.id}`);
+    el.addEventListener('click', () => {
+      // REMOVE ALL CLASS .active
+      removeActives();
+      // ADD CLASS .active
+      el.classList.add('active');
+      map.flyTo({
+        center: [
+          item.coordinates[0],
+          item.coordinates[1]
+        ],
+        zoom: 15,
+      })
+    });
   });
 }
 
@@ -108,6 +109,9 @@ function loadLocations() {
           new mapboxgl.Marker(el)
             .setLngLat(marker.coordinates)
             .addTo(map);
+
+          // FLY TO FILTERED LOCATIONS EVENTS
+          flyToLocationEvents(filteredLocations);
         });
       });
 
@@ -136,17 +140,8 @@ function loadLocations() {
           .addTo(map);
       });
 
-
-      // FLY TO LOCATION EVENTS
-      lngLatLocation.forEach((item) => {
-        console.log(item.coordinates);
-        flyToLocation(item.id, item.coordinates[0], item
-          .coordinates[1]);
-      });
-
-      // flyToLocation('.btn-alster',
-      //   lngLatLocation.alster[0],
-      //   lngLatLocation.alster[1]);
+      // FLY TO LOCATIONS EVENTS
+      flyToLocationEvents(lngLatLocation);
 
 
     })
